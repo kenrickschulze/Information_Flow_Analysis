@@ -27,16 +27,18 @@ def kde_condentropy(output, var= 0.05):
     dims = output.shape[1]
     return (dims/2.0)*(np.log(2*np.pi*var) + 1)
 
-np.random.seed(19)
-n=1000
-d=10
-activations = np.random.random(size=(n,d))
 
-entropy_up = entropy_estimator_kl(activations)
-entropy_low = entropy_estimator_bd(activations)
+if __name__ == "__main__":
+    np.random.seed(19)
+    n=1000
+    d=10
+    activations = np.random.random(size=(n,d))
 
-print(entropy_up)
-print(entropy_low)
+    entropy_up = entropy_estimator_kl(activations)
+    entropy_low = entropy_estimator_bd(activations)
+
+    print(entropy_up)
+    print(entropy_low)
 
 
 
